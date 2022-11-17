@@ -9,3 +9,10 @@ app.use(cors())
 app.use(logger('dev'))
 
 app.use('/fruits', fruitsRouter)
+
+app.use('/', (req, res) =>
+  res.send(`
+    Fruits API. A wrapper for Fruityvice - with CORS!
+    <br/>Endpoint: /fruits/:fruitName
+  `)
+)
